@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Title Here</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+  
+        .container {
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+  
+        .navbar {
+            background-color: #ddeaf1;
+            padding: 10px;
+            box-shadow: 0px 1px 5px rgba(66, 65, 65, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+  
+        .brand {
+            padding: 15px;
+            color: #3d644c;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+  
+        .links {
+            display: flex;
+        }
+  
+        .links a {
+            color: #181717;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            margin-right: 35px;
+        }
+  
+        .links a:hover {
+            background-color: #a19e9e;
+            color: black;
+        }
+  
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+  
+        .search-icon {
+            cursor: pointer;
+            padding: 10px;
+            background: #f7f0f0;
+            color: #f2f2f2;
+            border: none;
+            border-radius: 10px;
+            margin-left: 20px;
+        }
+  
+        .search-input {
+            display: none;
+            padding: 10px;
+            width: 120px;
+            border: none;
+            border-radius: 5px;
+        }
+  
+        .content-box {
+            background: linear-gradient(to bottom, #d3e1ff 60%, #d3e1ff 100%);
+            padding: 100px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+  
+        .content-box strong {
+            font-size: 20px;
+        }
+  
+        .content-box p {
+            font-weight: 200;
+        }
+  
+        .left-top-content {
+            font-size: 24px;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+  
+        .bottom-content {
+            padding-top: 16px;
+        }
+  
+        .bottom-content {
+            font-weight: bold;
+            padding: 160px;
+            text-align: left;
+        }
+  
+        .content-list {
+            display: flex;
+            text-decoration: none;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-top: -20px;
+        }
+  
+        .content-list li {
+            padding: 30px;
+        }
+  
+        .separator-line {
+            border-top: 1px solid #000;
+            margin-top: -20px;
+        }
+  
+        .additional-text1 {
+            text-align: left;
+            padding: 30px;
+            font-size: 45px;
+            color: #000000;
+            margin-left: 10px;
+        }
+  
+        .additional-text2 {
+            text-align: left;
+            padding: 10px;
+            font-size: 16px;
+            color: #000000;
+            margin-left: 30px;
+        }
+        .additional-image {
+            text-align: right;
+            margin-top: -490px;
+            margin-right: -10px;
+        }
+  
+        .additional-image img {
+            width: 500px;
+            height: 450px;
+            border-radius: 10px;
+        }
+        .additional-text3 {
+            text-align: right;
+            padding: 100px;
+            font-size: 45px;
+            color: #000000;
+            margin-right: 239px;
+        }
+  
+        .additional-text4 {
+            text-align: left;
+            font-size: 16px;
+            color: #000000;
+            margin-left: 700px;
+            margin-top: -65px;
+}
+        .additional-image2 {
+            text-align: left;
+            margin-top: -550px;
+            margin-left: 40px;
+        }
+  
+        .additional-image2 img {
+            width: 600px;
+            height: 450px;
+            border-radius: 10px;
+        }
+        .additional-text5 {
+            text-align: left;
+            padding: 237px;
+            font-size: 45px;
+            color: #000000;
+            margin-left: -200px;
+            margin-top: -150px;
+        }
+  
+        .additional-text6 {
+            text-align: left;
+            font-size: 16px;
+            color: #000000;
+            margin-left: 40px;
+            margin-top: -180px;
+        }
+        .additional-image3 {
+            text-align: right;
+            margin-top: -450px;
+        }
+  
+        .additional-image3 img {
+            width: 600px;
+            height: 450px;
+            border-radius: 10px;
+        }
+        .additional-text7 {
+            text-align: right;
+            padding: 100px;
+            font-size: 45px;
+            color: #000000;
+            margin-left: 550px;
+        }
+  
+        .additional-text8 {
+            text-align: left;
+            font-size: 16px;
+            color: #000000;
+            margin-left: 665px;
+            margin-top: -65px;
+        }
+        .additional-image4 {
+            text-align: left;
+            margin-top: -550px;
+            margin-left: 40px;
+        }
+  
+        .additional-image4 img {
+            width: 600px;
+            height: 450px;
+            border-radius: 10px;
+        }
+
+        .dropbtn {
+    background-color: transparent;
+    color: #181717;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #181717;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #a19e9e;
+    color: black;
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="brand">𝐀𝐧𝐭𝐢-𝐚𝐭𝐭𝐚𝐜𝐤</div>
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about-us.html">About</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Features</button>
+                    <div class="dropdown-content">
+                        <a href="report.html">Incident-Report</a>
+                        <a href="attacks.html">Top-Attacks</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <a href="profile.html">Profile</a>
+            </div>
+            <div class="search-container">
+                <div class="search-icon" onclick="toggleSearch()">&#128269;</div>
+                <input type="text" class="search-input" placeholder="Search..." id="searchInput">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content-box">
+                <h1>5 MOST COMMON TYPES OF CYBER ATTACKS</h1>
+                <p>A cyber attack is an attempt by cybercriminals, hackers or other digital adversaries to access a computer network or system, usually for the purpose of altering, stealing, destroying or exposing information.</p>
+            </div>
+        <div>
+            <div class="additional-text1">Malware</div>
+            <div class="additional-text2">
+                Malware — or malicious software — is any program or code that is created with<br>
+                the intent to do harm to a computer, network or server.<br>
+                Malware is the most common type of cyberattack, mostly because this term <br>
+                encompasses many subsets such as ransomware, trojans,<br>
+                spyware, viruses, worms, keyloggers, bots, cryptojacking, and any other type<br>
+                malware attack that leverages software in a malicious way.<br>
+                <br>
+                TYPES OF MALWARE:<br>
+                <br>I) Ransomware: 
+                <br>
+                <br>
+                Ransomware is a type of malware that prevents or limits users from accessing <br>
+                their system, either by locking the system's screen or by locking the users'<br>
+                files until a ransom is paid. Ransomware attacks are usually launched through<br>
+                 malicious links <br>
+                 <br>II) Trojans: 
+                <br>
+                <br>
+                A trojan is malware that appears to be legitimate software disguised as native <br>
+                operating system programs or harmless files like free downloads. Trojans are installed<br>
+                through social engineering techniques such as phishing or bait websites.<br>
+                 <br>III) Spyware: 
+                <br>
+                <br>
+                Spyware is a type of unwanted, malicious software that infects a computer  <br>
+                or other device and collects information about a user’s web activity without<br>
+                their knowledge or consent.<br>
+                </div>
+        </div>
+        <div class="additional-image">
+            <img src="https://academy.avast.com/hs-fs/hubfs/New_Avast_Academy/what_is_malware_academy_refresh/Types-of-Malware-EN.png?width=1684&height=1200&name=Types-of-Malware-EN.png" alt="Image Description">
+        </div>
+        <div class="additional-text3">Phishing</div>
+        <div class="additional-text4">  
+            Phishing is a type of cyberattack that uses email, SMS, phone, social media<br>
+            and social engineering techniques to entice a victim to share sensitive information <br>                                              
+            a malicious file that will install viruses on their computer or phone.<br>
+                <br>
+                TYPES OF PHISHING:<br>
+                <br>I) Kerberoasting: 
+                <br>
+                <br>
+                Kerberoasting is a post-exploitation attack technique that attempts to crack the<br>
+                password of a service account within the Active Directory (AD) where an adversary<br>
+                masquerading as an account user with a service principal name (SPN) requests a ticket.<br>
+                 <br>II) Pass the hash Attack : 
+                <br>
+                <br>
+                Pass the hash (PtH) is a type of attack in which an adversary steals a “hashed”<br>
+                user credential and uses it to create a new user session on the same network.<br>
+                It does not require the attacker to know or crack the password to gain access to system<br>
+                 <br>III) Brute Force Attacks: 
+                <br>
+                <br>
+                A brute force attack is uses a trial-and-error approach to systematically guess<br>
+                login info, credentials, and encryption keys. The attacker submits<br>
+                combinations of usernames and passwords until they finally guess correctly.<br>
+        </div>
+    </div>  
+    <div class="additional-image2">
+        <img src="https://wesecureapp.com/wp-content/uploads/2022/09/Phishing-Attacks.png">
+    </div> 
+    
+    <div class="additional-text5">Spoofing</div>
+    <div class="additional-text6">
+        Spoofing is a technique through which a cybercriminal disguises themselves<br>
+        as a known or trusted source. In so doing, the adversary is able to engage<br>
+        with the target and access their systems or devices with the ultimate goal<br>
+        of stealing information, extorting money or installing malware or other   <br>
+        harmful software on the device.<br>
+        
+        <br>
+        TYPES OF SPOOFING:<br>
+        <br>I) Domain Spoofing: 
+        <br>
+        <br>
+        Domain spoofing is a form of phishing where an attacker impersonates a <br>
+        known business or person with fake website or email domain to fool people into <br>
+        the trusting them. Typically, the domain appears to be legitimate at first glance,<br>
+        but a closer look will reveal subtle differences.<br>
+         <br>II) Email Spoofing: 
+        <br>
+        <br>
+        Email spoofing is a type of cyberattack that targets businesses by using<br>
+        emails with forged sender addresses. Because the recipient trusts the alleged <br>
+        sender, they are more likely to open the email and interact with its contents,<br>
+        such as a malicious link or attachment.<br>
+         <br>III) ARP Spoofing: 
+        <br>
+        <br>
+        Address Resolution Protocol (ARP) spoofing or ARP poisoning is a form of <br>
+        spoofing attack that hackers use to intercept data. A hacker commits <br>
+        an ARP spoofing attack by tricking one device into sending messages to<br>
+        the hacker instead of the intended recipient.<br>
+        </div>
+</div> 
+<div class="additional-image3">
+    <img src="https://socradar.io/wp-content/uploads/2022/07/what-is-spoofing-attack-and-how-to-prevent-it.png">
+</div> 
+    <div class="additional-text7">Identity-Based Attacks</div>
+        <div class="additional-text8">  
+            Identity-driven attacks are extremely hard to detect. When a valid user’s<br>
+            credentials have been compromised and an adversary is masquerading<br>       
+            as that user, it is often very difficult to differentiate between the user’s<br>
+            typical behavior and that of the hacker using traditional security measures and tools.<br>
+                <br>
+                TYPES OF Identity-Based Attacks:<br>
+                <br>I) Credential Harvesting: 
+                <br>
+                <br>
+                Credential stuffing attacks work on the premise that people often use the same<br>
+                user ID and password across multiple accounts.Therefore, possessing the credentials<br>
+                for one account may be able to grant access to other, unrelated account.<br>
+                 <br>II) Silver Ticket Attack: 
+                <br>
+                <br>
+                Pass the hash (PtH) is a type of attack in which an adversary steals a “hashed”<br>
+                user credential and uses it to create a new user session on the same network.<br>
+                It does not require the attacker to know or crack the password to gain access to system<br>
+                 <br>III) Golden Ticket Attack: 
+                <br>
+                <br>
+                In a golden ticket attack, adversaries attempt to gain unlimited access to an<br>
+                organization’s domain by accessing user data stored in Microsoft Active Directory(AD)<br>
+                by exploiting vulnerabilities in the Kerberos identity authentication protocol.<br>
+        </div>
+    </div>
+    <div class="additional-image4">
+        <img src="https://www.silverfort.com/wp-content/uploads/2023/12/identity-based-attack.png">
+    </div> 
+
+    <script>
+        function toggleSearch() {
+            var searchInput = document.getElementById("searchInput");
+            searchInput.style.display = (searchInput.style.display === "none" || searchInput.style.display === "") ? "block" : "none";
+        }
+    </script>
+</body>
+</html>

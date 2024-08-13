@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Firebase Database Example</title>
+<!-- Firebase JavaScript SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+  apiKey: "AIzaSyCMXh-7s3o5lhCaiTz3T8_MIqeFs-LSzcw",
+  authDomain: "anti-attack-ade2d.firebaseapp.com",
+  databaseURL: "https://anti-attack-ade2d-default-rtdb.firebaseio.com",
+  projectId: "anti-attack-ade2d",
+  storageBucket: "anti-attack-ade2d.appspot.com",
+  messagingSenderId: "864109322237",
+  appId: "1:864109322237:web:a8ad5c0287a5f086440394"
+};
+
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Get a reference to the database service
+  const database = firebase.database();
+
+  // Write data to the database
+  function writeData() {
+    // Example data
+    const data = {
+      name: "RajHans",
+      age: 19,
+      email: "rajhans1501@gmail.com"
+    };
+
+    // Push data to a new child location in the database
+    const newPostRef = database.ref().child('users').push();
+    newPostRef.set(data)
+      .then(() => {
+        console.log("Data added successfully!");
+      })
+      .catch((error) => {
+        console.error("Error adding data: ", error);
+      });
+  }
+</script>
+</head>
+<body>
+  <h1>Firebase Database Example</h1>
+  <button onclick="writeData()">Write Data</button>
+</body>
+</html>

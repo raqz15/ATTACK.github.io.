@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Title Here</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+  
+        .container {
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+  
+        .navbar {
+            background-color: #ddeaf1;
+            padding: 10px;
+            box-shadow: 0px 1px 5px rgba(66, 65, 65, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+  
+        .brand {
+            padding: 15px;
+            color: #3d644c;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+  
+        .links {
+            display: flex;
+        }
+  
+        .links a {
+            color: #181717;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            margin-right: 35px;
+        }
+  
+        .links a:hover {
+            background-color: #a19e9e;
+            color: black;
+        }
+  
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+  
+        .search-icon {
+            cursor: pointer;
+            padding: 10px;
+            background: #f7f0f0;
+            color: #f2f2f2;
+            border: none;
+            border-radius: 10px;
+            margin-left: 20px;
+        }
+  
+        .search-input {
+            display: none;
+            padding: 10px;
+            width: 120px;
+            border: none;
+            border-radius: 5px;
+        }
+  
+        .content-box {
+            background: linear-gradient(to bottom, #d3e1ff 60%, #d3e1ff 100%);
+            padding: 100px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+  
+        .content-box strong {
+            font-size: 20px;
+        }
+  
+        .content-box p {
+            font-weight: 200;
+        }
+  
+        .left-top-content {
+            font-size: 24px;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+  
+        .bottom-content {
+            padding-top: 16px;
+        }
+  
+        .bottom-content {
+            font-weight: bold;
+            padding: 160px;
+            text-align: left;
+        }
+  
+        .content-list {
+            display: flex;
+            text-decoration: none;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-top: -50px;
+        }
+  
+        .content-list li {
+            padding: 50px;
+        }
+  
+        .separator-line {
+            border-top: 1px solid #000;
+            margin-top: -50px;
+        }
+  
+        .additional-text {
+            text-align: left;
+            padding: 30px;
+            font-size: 45px;
+            color: #000000;
+        }
+  
+        .additional-text2 {
+            text-align: left;
+            padding: 10px;
+            font-size: 16px;
+            color: #000000;
+            margin-left: 30px;
+        }
+  
+        .additional-image {
+            text-align: right;
+            margin-top: -200px;
+            margin-right: 150px;
+        }
+  
+        .additional-image img {
+            width: 400px;
+            height: 200px;
+            border-radius: 10px;
+        }
+  
+        .additional-text3 {
+            text-align: right;
+            padding: 100px;
+            font-size: 45px;
+            color: #000000;
+            margin-right: -65px;
+        }
+  
+        .additional-text4 {
+    text-align: left;
+    font-size: 16px;
+    color: #000000;
+    margin-left: 700px;
+    margin-top: -65px;
+}
+.additional-image2 {
+            text-align: left;
+            margin-top: -300px;
+            margin-left: 150px;
+        }
+  
+        .additional-image2 img {
+            width: 400px;
+            height: 300px;
+            border-radius: 10px;
+        }
+        .additional-text5 {
+            text-align: left;
+            padding: 30px;
+            font-size: 45px;
+            color: #000000;
+        }
+  
+        .additional-text6 {
+            text-align: left;
+            padding: 10px;
+            font-size: 16px;
+            color: #000000;
+            margin-left: 30px;
+        }
+  
+        .additional-image3 {
+            text-align: right;
+            margin-top: -200px;
+            margin-right: 150px;
+        }
+  
+        .additional-image3 img {
+            width: 400px;
+            height: 250px;
+            border-radius: 10px;
+        }
+        .additional-text7 {
+            text-align: right;
+            padding: 100px;
+            font-size: 45px;
+            color: #000000;
+            margin-right: -90px;
+        }
+  
+        .additional-text8 {
+    text-align: left;
+    font-size: 16px;
+    color: #000000;
+    margin-left: 660px;
+    margin-top: -65px;
+}
+.additional-image4 {
+            text-align: left;
+            margin-top: -300px;
+            margin-left: 150px;
+        }
+  
+        .additional-image4 img {
+            width: 400px;
+            height: 300px;
+            border-radius: 10px;
+        }
+        .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: #181717;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #181717;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #a19e9e;
+    color: black;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="brand">𝐀𝐧𝐭𝐢-𝐚𝐭𝐭𝐚𝐜𝐤</div>
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about-us.html">About</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Features</button>
+                    <div class="dropdown-content">
+                        <a href="report.html">Incident-Report</a>
+                        <a href="attacks.html">Top-Attacks</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <a href="profile.html">Profile</a>
+            </div>
+            <div class="search-container">
+                <div class="search-icon" onclick="toggleSearch()">&#128269;</div>
+                <input type="text" class="search-input" placeholder="Search..." id="searchInput">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content-box">
+                <h1>What is a denial-of-service (DoS) attack?</h1>
+                <p>A denial-of-service (DoS) attack is a malicious attempt to overwhelm <br>a web property with traffic in order to disrupt its normal operations.</p>
+            </div>
+        </div>
+
+        <ul class="content-list">
+            <li>What is a DoS attack?</li>
+            <li>How Does DoS attack work?</li>
+            <li>Common DoS attacks</li>
+            <li>Understanding Dos Attack Tools</li>
+        </ul>
+        <div class="separator-line"></div>
+        <div>
+            <div class="additional-text">What is a denial-of-service attack?</div>
+            <div class="additional-text2">
+                A denial-of-service (DoS) attack is a type of cyber attack in which a malicious actor aims to<br> 
+                render a computer or other device unavailable to its intended users by interrupting the<br> 
+                device's normal functioning. DoS attacks typically function by overwhelming or flooding a <br>
+                targeted machine with requests until normal traffic is unable to be processed, resulting in <br> 
+                denial-of-service to addition users. A DoS attack is characterized by using a single<br> 
+                computer to launch the attack.
+            </div>
+            <div class="additional-image">
+                <img src="https://uploads-ssl.webflow.com/5ff66329429d880392f6cba2/628269874ef7ea0b1cce663d_DoS%20assault%20Preview.jpg" alt="Image Description">
+            </div>
+            <div class="additional-text3">How does a DoS attack work?</div>
+            <div class="additional-text4">  
+                In a DoS attack, the cyber attackers typically use one internet connection and one device to send rapid
+                and continuous requests to a target server to overload the server’s bandwidth. DoS attackers exploit a
+                software vulnerability in the system and proceed to exhaust the RAM or CPU of the server. The damage  
+                in loss of service a DoS attack does can be fixed in a short time by implementing a firewall with allow / <br>  
+                deny rules. Because a DoS attack only has one IP address, the IP address can be easily fished out and  
+                denied further access using a firewall. However, there is a type of DoS attack that is not so easy to detect 
+                a distributed denial-of-service (DDoS) attack.
+        
+            </div>
+        </div>
+    </div>
+    <div class="additional-image2">
+        <img src="https://www.thesslstore.com/blog/wp-content/uploads/2019/10/what-is-ddos-botmaster.png">
+    </div>
+    <div class="additional-text5">Common DoS Attacks</div>
+            <div class="additional-text6">
+                There are two general methods of DoS attacks: flooding services or crashing services.<br> 
+                Flood attacks occur when the system receives too much traffic for the server to buffer,<br> 
+                causing them to slow down and eventually stop. Popular flood attacks include: <br>
+                i) Buffer overflow attacks – the most common DoS attack. The concept is to send more<br> 
+                traffic to a network address than the programmers have built the system to handle<br> 
+                ii)ICMP flood – leverages misconfigured network devices by sending spoofed packets<br> 
+                that ping every computer on the targeted network, instead of just one specific machine.<br> 
+                iii)SYN flood – sends a request to connect to a server, but never completes <br>
+                the handshake. Continues until all open ports are saturated with requests and none are <br> 
+                available for legitimate users to connect to.<br> 
+                
+            </div>
+            <div class="additional-image3">
+                <img src="https://packt-type-cloud.s3.amazonaws.com/uploads/sites/2432/2018/04/62d634c7-05e8-4c7f-9077-07009000d2fa.png">
+            </div>
+            <div class="additional-text7">Understanding Dos Attack Tools</div>
+            <div class="additional-text8">
+                The DoS attacks that most people have heard about are those launched against high<br> 
+                profile websites, since these are frequently reported by the media. However,<br> 
+                attacks on any type of system, including industrial control systems which support<br>
+                targeted machine with requests until normal traffic is unable to be processed<br> 
+                critical processes, can result in a denial of service.<br> 
+                DoS attacks can range in duration and may target more than one site or system at a<br>
+                time. An attack becomes a 'distributed denial of service', referred to as “DDoS”,<br>
+                when it comes from multiple computers (or vectors) instead of just one. <br>
+            </div>
+            <div class="additional-image4">
+                <img src="https://thesecmaster.com/wp-content/uploads/2022/01/What-is-a-Denial-of-Service-Attack-How-to-Prevent-Denial-of-Service-Attacks.png" alt="Image Description">
+            </div>
+    <script>
+        function toggleSearch() {
+            var searchInput = document.getElementById("searchInput");
+            searchInput.style.display = (searchInput.style.display === "none" || searchInput.style.display === "") ? "block" : "none";
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Title Here</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+  
+        .container {
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+  
+        .navbar {
+            background-color: #ddeaf1;
+            padding: 10px;
+            box-shadow: 0px 1px 5px rgba(66, 65, 65, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+  
+        .brand {
+            padding: 15px;
+            color: #3d644c;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+  
+        .links {
+            display: flex;
+        }
+  
+        .links a {
+            color: #181717;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            margin-right: 35px;
+        }
+  
+        .links a:hover {
+            background-color: #a19e9e;
+            color: black;
+        }
+  
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+  
+        .search-icon {
+            cursor: pointer;
+            padding: 10px;
+            background: #f7f0f0;
+            color: #f2f2f2;
+            border: none;
+            border-radius: 10px;
+            margin-left: 20px;
+        }
+  
+        .search-input {
+            display: none;
+            padding: 10px;
+            width: 120px;
+            border: none;
+            border-radius: 5px;
+        }
+  
+        .content-box {
+            background: linear-gradient(to bottom, #d3e1ff 60%, #d3e1ff 100%);
+            padding: 100px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+  
+        .content-box strong {
+            font-size: 20px;
+        }
+  
+        .content-box p {
+            font-weight: 200;
+        }
+  
+        .left-top-content {
+            font-size: 24px;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+  
+        .bottom-content {
+            padding-top: 16px;
+        }
+  
+        .bottom-content {
+            font-weight: bold;
+            padding: 160px;
+            text-align: left;
+        }
+  
+        .content-list {
+            display: flex;
+            text-decoration: none;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-top: -20px;
+        }
+  
+        .content-list li {
+            padding: 30px;
+        }
+  
+        .separator-line {
+            border-top: 1px solid #000;
+            margin-top: -20px;
+        }
+  
+        .additional-text {
+            text-align: left;
+            padding: 30px;
+            font-size: 45px;
+            color: #000000;
+        }
+  
+        .additional-text2 {
+            text-align: left;
+            padding: 10px;
+            font-size: 16px;
+            color: #000000;
+            margin-left: 30px;
+        }
+  
+        .additional-image {
+            text-align: right;
+            margin-top: -200px;
+            margin-right: 150px;
+        }
+  
+        .additional-image img {
+            width: 400px;
+            height: 200px;
+            border-radius: 10px;
+        }
+  
+        .additional-text3 {
+            text-align: right;
+            padding: 100px;
+            font-size: 45px;
+            color: #000000;
+            margin-right: -89px;
+        }
+  
+        .additional-text4 {
+    text-align: left;
+    font-size: 16px;
+    color: #000000;
+    margin-left: 850px;
+    margin-top: -65px;
+}
+.additional-image2 {
+            text-align: left;
+            margin-top: -300px;
+            margin-left: 150px;
+        }
+  
+        .additional-image2 img {
+            width: 400px;
+            height: 300px;
+            border-radius: 10px;
+        }
+        .additional-text5 {
+            text-align: left;
+            padding: 30px;
+            font-size: 45px;
+            color: #000000;
+        }
+  
+        .additional-text6 {
+            text-align: left;
+            padding: 10px;
+            font-size: 16px;
+            color: #000000;
+            margin-left: 30px;
+        }
+  
+        .additional-image3 {
+            text-align: right;
+            margin-top: -200px;
+            margin-right: 150px;
+        }
+  
+        .additional-image3 img {
+            width: 400px;
+            height: 200px;
+            border-radius: 10px;
+        }
+        .additional-text7 {
+            text-align: right;
+            padding: 100px;
+            font-size: 45px;
+            color: #000000;
+            margin-right: -25px;
+        }
+  
+        .additional-text8 {
+    text-align: left;
+    font-size: 16px;
+    margin-left: 880px;
+    margin-top: -65px;
+}
+.additional-image4 {
+            text-align: left;
+            margin-top: -300px;
+            margin-left: 150px;
+        }
+  
+        .additional-image4 img {
+            width: 400px;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        .dropbtn {
+    background-color: transparent;
+    color: #181717;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #181717;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #a19e9e;
+    color: black;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="brand">𝐀𝐧𝐭𝐢-𝐀𝐭𝐭𝐚𝐜𝐤</div>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="about-us.html">About</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Features</button>
+                    <div class="dropdown-content">
+                        <a href="report.html">Incident-Report</a>
+                        <a href="attacks.html">Top-Attacks</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+              <a href="profile.html">Profile</a>
+            </div>
+            <div class="search-container">
+                <div class="search-icon" onclick="toggleSearch()">&#128269;</div>
+                <input type="text" class="search-input" placeholder="Search..." id="searchInput">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content-box">
+                <h1>What is a DDos attack?</h1>
+                <p>DDoS attacks are a primary concern in Internet security today. DDoS attacks function, and how they can be stopped..</p>
+            </div>
+        </div>
+
+        <ul class="content-list">
+            <li>What is a DDoS attack?</li>
+            <li>What is a DDoS botnet?</li>
+            <li>Common DDoS attacks?</li>
+            <li>process for mitigating a DDoS attack?</li>
+        </ul>
+        <div class="separator-line"></div>
+        <div>
+            <div class="additional-text"> What is a DDoS attack?</div>
+            <div class="additional-text2">
+              A distributed denial-of-service (DDoS) attack is a malicious attempt to disrupt the normal<br>
+              traffic of a targeted server, service or network by overwhelming the target or its<br>
+              surrounding infrastructure with a flood of Internet traffic.<br>
+              DDoS attacks achieve effectiveness by utilizing multiple compromised computer systems<br>
+              as sources of attack traffic. Exploited machines can include computers and other<br>
+              networked resources such as IoT devices.
+            </div>
+            <div class="additional-image">
+                <img src="https://cf-assets.www.cloudflare.com/slt3lc6tev37/7xwaGxGINeyxavVbrXO6M1/24f139faac6094044adaa84c82394962/ddos_attack_traffic_metaphor.png" alt="Image Description">
+            </div>
+            <div class="additional-text3">How does DDoS attack work?</div>
+            <div class="additional-text4">  
+              DDoS attacks are carried out with networks of Internet-connected machines.<br>
+              These networks consist of computers and other devices (such as IoT devices)<br>
+              which have been infected with malware, allowing them to be controlled remotely<br>
+              by an attacker. These individual devices are referred to as bots (or zombies),<br>
+              and a group of bots is called a botnet.<br>
+              Once a botnet has been established, the attacker is able to direct an attack by<br>
+              sending remote instructions to each bot.<br>
+
+
+                   
+            </div>
+        </div>
+    </div>
+    <div class="additional-image2">
+        <img src="https://cf-assets.www.cloudflare.com/slt3lc6tev37/3jlyZeWRy9eBz3tyEk9mxA/96eab064524495e8f6b2647f1f7b9d60/application_layer_ddos_example.png">
+    </div>
+    <div class="additional-text5"> Common types of DDoS attacks?</div>
+    <div class="additional-text6">
+      Different types of DDoS attacks target varying components of a network connection. In<br>
+      order to understand how different DDoS attacks work, it is necessary to know how a<br>
+      network connection is made.<br>
+      A network connection on the Internet is composed of many different components or<br>
+     “layers”. Like building a house from the ground up, each layer in the model has a different purpose<br>
+     The OSI model, shown below, is a conceptual framework used to describe network<br>
+     connectivity in 7 distinct layers.<br>
+      
+    </div>
+    <div class="additional-image3">
+        <img src="https://cf-assets.www.cloudflare.com/slt3lc6tev37/6ZH2Etm3LlFHTgmkjLmkxp/59ff240fb3ebdc7794ffaa6e1d69b7c2/osi_model_7_layers.png" alt="Image Description">
+    </div>
+    <div class="additional-text7">Mitigating DDoS attack?</div>
+    <div class="additional-text8">
+        The key concern in mitigating a DDoS attack is differentiating between attack <br> 
+        traffic and normal traffic.For example, if a product release has a company’s<br> 
+        website swamped with eager customers, cutting off all traffic is a mistake.<br>
+        targeted machine with requests until normal traffic is unable to be processed<br> 
+        If that company suddenly has a surge in traffic from known attackers, efforts <br> 
+        to alleviate an attack are probably necessary.<br>
+        In the modern Internet, DDoS traffic comes in many forms. The traffic can<br>
+        vary in design from un-spoofed single source attacks to complex and adaptive <br>
+        multi-vector attacks.<br>
+
+
+    </div>
+    <div class="additional-image4">
+        <img src="https://www.imperva.com/learn/wp-content/uploads/sites/13/2019/01/DDoS-Mitigation-Stages.jpg" alt="Image Description">
+    </div>
+
+    <script>
+        function toggleSearch() {
+            var searchInput = document.getElementById("searchInput");
+            searchInput.style.display = (searchInput.style.display === "none" || searchInput.style.display === "") ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
